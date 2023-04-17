@@ -1,0 +1,448 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::after, *::before{
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  font-size: 100%;
+  font-family:'Lobster','Dosis','Kumbh Sans', Arial, Helvetica, sans-serif;
+  color: var(--negro);
+  
+  /* opcional */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*HEADER*/
+
+/*HEADER*/
+.Header{
+  /* background-color: green; */
+
+  width: 90%;
+  margin: auto;
+  padding: 2em;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.Header-logo{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 3.7em;
+  margin-left: 2em;
+}
+.Header-itchy{
+color: white;
+font-size: 1.8em;
+font-family: 'Lobster', cursive;
+}
+.Header-svg{
+color: white;
+width: 2em;
+}
+.Header-nav{
+  /* background-color: red; */
+  
+margin-top: 2%;
+}
+
+.Header-ul{
+
+  background-color: rgba(184, 184, 184, 0.5);
+  padding: 0.7em 1.5em;
+  border-radius: 0.5em;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: top;
+
+  gap:3em;
+
+}
+.Header-li{
+  font-size: 1em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.Header-a{}
+
+.Header-menubtn{
+  width: 2em;
+  height: 2em;
+  /* background-color: white; */
+
+  display: none;
+}
+.Header-svg2{
+  width: 2em;
+  color: white;
+}
+
+
+.Header-li{
+  color: white;
+  font-size: 1em;
+  font-family: 'Dosis', sans-serif;
+  
+}
+.Header-li1{
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600 ;
+  position: relative;
+}
+.Header-a::after{
+  content: '';
+  display:block;
+  border-bottom: 0.1em solid rgb(255, 255, 255);
+  padding-bottom: 0.2em;
+
+  transform: scaleX(0);
+
+  transition: all 0.4s ease;
+}
+.Header-a:hover::after{
+  transform: scaleX(1);
+}
+
+.Header-libtn{
+  /* background-color: rgb(202, 91, 91); */
+  top: 0;
+  color: rgb(255, 255, 255);
+  
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  gap: 0.5em;
+
+  width: 2em;
+  padding-top: 3em;
+  display: none;
+
+  transition: all 0.4s ease;
+}
+.Header-li1:hover .Header-libtn{
+  display: flex;
+}
+
+.Header-li2{
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  opacity: 1;
+  font-family: 'Dosis';
+}
+
+.Header-a{
+  transform: scale(1);
+  font-family: 'Dosis';
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+.Header-a.isActive{
+  transform: scale(1.2);
+}
+
+.Header-li:hover .Header-a::after{
+  transform: scaleX(1);
+}
+.Header-li1:hover .Header-a::after{
+  transform: scaleX(1);
+}
+.Header-a1{
+  transform: scale(1);
+  font-family: 'Dosis';
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+/*MAIN*/
+
+.Main{
+    background-color: rgb(255, 255, 255);
+}
+.Main-gridcontainer{
+display: grid;
+grid-template-columns: repeat( 3 , 3fr);
+grid-template-rows: repeat( 3 ,3fr);
+gap: 0.2em;
+animation: aparicion 1.5s ease 1 both ;
+
+
+}
+.Main-grid{
+    position: relative;
+    background-color: red;
+    object-fit: cover;
+}
+.Main-card{
+background-color: green;
+}
+
+.Main-img{ 
+    
+object-fit: cover;
+width: 100%;
+height: 100%;
+background-color: red;
+
+}
+
+.Main-grid.una{
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+
+.Main-hover{
+position: absolute;
+background-color: rgba(0, 0, 0, 0.7);
+    
+   
+top: 0;
+width: 100%;
+height: 100%;
+  
+display: flex;
+flex-flow: column;
+justify-content: center;
+align-items: center;
+  
+/* gap: 1em; */
+  
+opacity: 0%;
+  
+transition: all 0.4s ease;
+  
+}
+  
+.Main-grid:hover .Main-hover{
+opacity: 100%;
+    
+}
+
+.Main-span{
+    
+  color:white;
+  font-size: 1.4em;
+  font-family: 'Dosis';
+  transform: translateY(-100%);
+  opacity: 0%;
+
+  transition: all 1s ease;
+}
+
+.Main-card:hover .Main-span{
+transform: translateY(0%);
+opacity: 100%;
+} 
+
+@keyframes aparicion{
+  0%{
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.5s ease;
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease;
+  }
+}
+
+/*FOOTER*/
+
+.Footer{
+  width: 100%;
+  background-color: black;
+  border-top: 0.2em solid white;
+  
+}
+.Footer-div{
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  padding: 1.2em;
+}
+.Footer-span{
+  /* background-color: aqua; */
+  color: rgb(255, 255, 255);
+  font-family: 'Dosis';
+}
+.Footer-svg{
+/* background-color: red; */
+
+display: flex;
+flex-flow: row;
+justify-content: center;
+align-items: center;
+gap: 1em;
+}
+.Footer-rrss{
+  width: 1.2em;
+  color: rgb(255, 255, 255);
+
+  cursor: pointer;
+
+}
+
+@media (max-width:650px){
+  .Main-gridcontainer{
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 1em; */
+    
+    }
+
+}
+
+@media (max-width:900px){
+  .Header-menubtn{
+    display: block;
+  }
+  .Header-nav{
+    display: none;
+  }
+  .Header-nav.isActive{
+    display: block ;
+    width: 100%;
+  }
+  .Header-ul{
+    /* background-color: rgb(39, 39, 100, 0.5);
+    border-radius: 1em; */
+        background-color:transparent;
+        flex-flow:row ;
+        align-items: flex-start;
+        padding: 2em 1em;
+  }
+  .Header-logo{
+    font-size: 1em;
+  }
+  .Header-svg{
+    width: 1.5em;
+  }
+  .Main-span{
+    font-size: 1em;
+      }
+}
